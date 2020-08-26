@@ -1,0 +1,9 @@
+{
+  "packages/**.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint --fix"
+  ],
+  "package.json": [
+    "sort-package-json"
+  ]
+}
