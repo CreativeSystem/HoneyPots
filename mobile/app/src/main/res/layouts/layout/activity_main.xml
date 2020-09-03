@@ -7,6 +7,9 @@
     tools:context=".MainActivity">
 
     <include
+        layout="@layout/layout_item_list" />
+
+    <include
         layout="@layout/navigation_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

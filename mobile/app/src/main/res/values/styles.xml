@@ -11,4 +11,7 @@
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
     </style>
+    <style name="itemListFeed" parent="">
+        <item name="android:background">?attr/colorPrimaryDark</item>
+    </style>
 </resources>

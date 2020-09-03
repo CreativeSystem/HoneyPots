@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="110dp"
+    android:layout_height="150dp"
+    style="@style/itemListFeed"
+    android:orientation="vertical"
+    android:elevation="10dp"
+    >
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        app:srcCompat="@drawable/image_12" />
+
+    <ImageView
+        android:id="@+id/item_gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/item_gradient"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apple Pie"
+        android:layout_alignStart="@id/item_gradient"
+        android:layout_alignTop="@id/item_gradient"
+        android:layout_alignEnd="@id/item_gradient"
+        android:layout_alignBottom="@id/item_gradient"
+        android:gravity="center"
+        android:textColor="#fff"/>
+</RelativeLayout>
