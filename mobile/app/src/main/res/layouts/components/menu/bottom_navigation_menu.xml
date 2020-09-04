@@ -3,20 +3,20 @@
     <item
         android:id="@+id/feed"
         android:icon="@drawable/list"
-        android:title="Feed" />
+        android:title="@string/navigation_bar_item_feed" />
     <item
         android:id="@+id/search"
         android:enabled="true"
         android:icon="@drawable/search"
-        android:title="Search"/>
+        android:title="@string/navigation_bar_item_search"/>
     <item
         android:id="@+id/liked"
         android:enabled="true"
         android:icon="@drawable/heart"
-        android:title="Liked"/>
+        android:title="@string/navigation_bar_item_liked"/>
     <item
         android:id="@+id/profile"
         android:enabled="true"
         android:icon="@drawable/user"
-        android:title="Profile"/>
+        android:title="@string/navigation_bar_item_profile"/>
 </menu>

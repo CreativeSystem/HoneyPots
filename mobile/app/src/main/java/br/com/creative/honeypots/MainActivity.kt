@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        bottomNavigationView.floatingButton.setOnClickListener {
+            Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
+        }
+
         bottomNavigationView.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.feed -> {
