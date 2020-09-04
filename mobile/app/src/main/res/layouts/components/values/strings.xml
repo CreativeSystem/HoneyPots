@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Honey Pots</string>
-
     <string name="navigation_bar_item_feed">Feed</string>
     <string name="navigation_bar_item_search">Search</string>
     <string name="navigation_bar_item_liked">Liked</string>
