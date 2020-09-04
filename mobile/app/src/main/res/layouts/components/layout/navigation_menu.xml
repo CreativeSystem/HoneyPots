@@ -27,6 +27,6 @@
         app:layout_anchor="@+id/bottomNavigation"
         app:layout_anchorGravity="top|center"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-        app:srcCompat="@drawable/plus" />
+        app:srcCompat="@drawable/ic_baseline_add_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
