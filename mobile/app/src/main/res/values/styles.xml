@@ -1,11 +1,25 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/ubuntu</item>
     </style>
+
+    <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemIconTint">@color/botNavItemTint</item>
+        <item name="itemTextColor">@color/botNavItemTint</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+    <style name="FloatingButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/floatingButtonBG</item>
+        <item name="tint">@color/floatingButtonTint</item>
+        <item name="rippleColor">@color/floatingButtonRipple</item>
+        <item name="fabSize">mini</item>
+    </style>
+
     <style name="itemListFeed" parent="">
         <item name="android:background">?attr/colorPrimaryDark</item>
     </style>

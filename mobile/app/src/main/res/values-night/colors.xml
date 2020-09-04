@@ -7,6 +7,13 @@
     <color name="background">#121212</color>
     <color name="text">#F5F5F1</color>
     <color name="textAlt">#333333</color>
+
+    <color name="botNavItemTint">@color/bottom_navbar_item_tint</color>
+    <color name="botNavSelectedItemTint">#F5F5F1</color>
+
+    <color name="floatingButtonBG">#5BCD6F</color>
+    <color name="floatingButtonRipple">#f8c444</color>
+    <color name="floatingButtonTint">#333333</color>
     
 <!--    <color name="lightYellowPrimary">#F8C444</color>-->
 <!--    <color name="lightBlackPrimary">#333333</color>-->
