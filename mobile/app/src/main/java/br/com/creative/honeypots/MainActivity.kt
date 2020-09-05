@@ -1,13 +1,13 @@
 package br.com.creative.honeypots
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.navigation_menu.*
 import kotlinx.android.synthetic.main.navigation_menu.view.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,30 +16,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        bottomNavigationView.bottomNavigation.setupWithNavController(navController)
+
+
         bottomNavigationView.floatingButton.setOnClickListener {
             Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
-        }
-
-        bottomNavigationView.bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.feed -> {
-                    Toast.makeText(this, "FEED", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.search -> {
-                    Toast.makeText(this, "SEARCH", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.liked -> {
-                    Toast.makeText(this, "LIKED", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.profile -> {
-                    Toast.makeText(this, "PROFILE", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
         }
 
         btn_dark.setOnClickListener {
