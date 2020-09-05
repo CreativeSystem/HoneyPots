@@ -1,16 +1,13 @@
 package br.com.creative.honeypots
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.fragment.app.FragmentActivity
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.navigation_menu.*
 import kotlinx.android.synthetic.main.navigation_menu.view.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,11 +16,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fun setupViews() {
-            val navController = findNavController(R.id.fragNavHost)
 
-            bottomNavigationView.bottomNavigation.setupWithNavController(navController)
-        }
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        bottomNavigationView.bottomNavigation.setupWithNavController(navController)
+
 
         bottomNavigationView.floatingButton.setOnClickListener {
             Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
