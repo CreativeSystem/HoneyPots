@@ -1,11 +1,20 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="fontFamily">@font/ubuntu</item>
+
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="android:navigationBarColor">@color/backgroundSplash</item>
+        <item name="android:statusBarColor">@color/backgroundSplash</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowBackground">@drawable/splash_drawable</item>
     </style>
 
     <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
