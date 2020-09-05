@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_menu.*
@@ -16,30 +19,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottomNavigationView.floatingButton.setOnClickListener {
-            Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
+        fun setupViews() {
+            val navController = findNavController(R.id.fragNavHost)
+
+            bottomNavigationView.bottomNavigation.setupWithNavController(navController)
         }
 
-        bottomNavigationView.bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.feed -> {
-                    Toast.makeText(this, "FEED", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.search -> {
-                    Toast.makeText(this, "SEARCH", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.liked -> {
-                    Toast.makeText(this, "LIKED", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.profile -> {
-                    Toast.makeText(this, "PROFILE", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
+        bottomNavigationView.floatingButton.setOnClickListener {
+            Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
         }
 
         btn_dark.setOnClickListener {
