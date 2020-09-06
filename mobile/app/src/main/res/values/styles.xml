@@ -17,6 +17,11 @@
         <item name="android:windowBackground">@drawable/splash_drawable</item>
     </style>
 
+    <style name="AppTheme.SignIn" parent="AppTheme">
+        <item name="android:statusBarColor">@color/backgroundSignIn</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
     <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
         <item name="itemIconTint">@color/botNavItemTint</item>
         <item name="itemTextColor">@color/botNavItemTint</item>

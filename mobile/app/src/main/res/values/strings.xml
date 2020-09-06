@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Honey Pots</string>
+
+    <!-- SignIn Screen -->
+    <string name="signin_app_title">Honey Pot</string>
+    <string name="signin_app_subtitle">Your recipes book</string>
 </resources>

@@ -25,7 +25,6 @@ class MainActivity : BaseActivity() {
 
         bottomNavigationView.bottomNavigation.setupWithNavController(navController)
 
-
         bottomNavigationView.floatingButton.setOnClickListener {
             Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
         }
