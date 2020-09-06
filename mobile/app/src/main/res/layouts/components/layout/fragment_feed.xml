@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".FeedFragment">
 
-    <include layout="@layout/feed_app_bar"/>
+    <include
+        android:id="@+id/feedAppBarView"
+        layout="@layout/feed_app_bar" />
 
     <TextView
         android:layout_width="match_parent"
