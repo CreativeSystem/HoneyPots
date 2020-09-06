@@ -12,14 +12,12 @@ import kotlinx.coroutines.*
 class SplashActivity :BaseActivity() {
     private val activityScope = CoroutineScope(Dispatchers.Main)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
         setContentView(R.layout.activity_splash)
 
         activityScope.launch {
-            delay(3000)
+            delay(2000)
             var intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
             finish()

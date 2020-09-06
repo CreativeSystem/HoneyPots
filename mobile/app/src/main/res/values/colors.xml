@@ -15,7 +15,7 @@
     <color name="floatingButtonRipple">#f5f5f1</color>
     <color name="floatingButtonTint">#f5f5f1</color>
 
-    <color name="backgroundSplash">@color/colorPrimary</color>
+    <color name="backgroundSplash">#F8C444</color>
 
 <!--    <color name="lightYellowPrimary">#F8C444</color>-->
 <!--    <color name="lightBlackPrimary">#333333</color>-->

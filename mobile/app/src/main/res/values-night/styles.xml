@@ -11,11 +11,4 @@
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
 
-    <style name="AppTheme.Splash" parent="AppTheme">
-        <item name="android:navigationBarColor">@color/backgroundSplash</item>
-        <item name="android:statusBarColor">@color/backgroundSplash</item>
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowBackground">@drawable/splash_drawable</item>
-    </style>
-
 </resources>
