@@ -8,6 +8,8 @@
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
+
+        <item name="colorControlNormal">@color/text</item>
     </style>
 
     <style name="AppTheme.Splash" parent="AppTheme">
@@ -27,6 +29,10 @@
         <item name="tint">@color/floatingButtonTint</item>
         <item name="rippleColor">@color/floatingButtonRipple</item>
         <item name="fabSize">mini</item>
+    </style>
+
+    <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="itemListFeed" parent="">
