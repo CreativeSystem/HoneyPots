@@ -6,7 +6,6 @@
         android:id="@+id/savory"
         android:title="Savories"
         app:showAsAction="ifRoom"
-        android:iconTint="@color/textAlt"
         />
     <item
         android:id="@+id/sweet"

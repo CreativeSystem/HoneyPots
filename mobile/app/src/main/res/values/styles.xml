@@ -4,12 +4,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="fontFamily">@font/ubuntu</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="fontFamily">@font/ubuntu_bold</item>
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
-
-        <item name="colorControlNormal">@color/text</item>
     </style>
 
     <style name="AppTheme.Splash" parent="AppTheme">
@@ -31,8 +31,11 @@
         <item name="fabSize">mini</item>
     </style>
 
-    <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+    <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:elevation">4dp</item>
         <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="fontFamily">@font/ubuntu_bold</item>
     </style>
 
     <style name="itemListFeed" parent="">

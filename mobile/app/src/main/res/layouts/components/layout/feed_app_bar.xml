@@ -2,25 +2,43 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:textAlignment="viewEnd"
+    android:textDirection="rtl">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top"
-        android:background="@color/colorPrimary"
-        >
+        android:background="@color/colorPrimary">
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/feedTopAppBar"
         style="@style/FeedTopAppBar"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
         android:outlineProvider="none"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center"
-        app:menu="@menu/top_app_bar" />
+        app:menu="@menu/top_app_bar_menu"
+        />
+
+    <ImageView
+        android:id="@+id/feedLogo"
+        android:layout_width="56dp"
+        android:layout_height="46dp"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="start|center"
+        android:elevation="4dp"
+        android:layout_marginStart="4dp"
+        android:clickable="true"
+        android:outlineProvider="none"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="honey pots logo on feed"
+        android:focusable="true" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

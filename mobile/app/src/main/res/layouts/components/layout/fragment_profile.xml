@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:background="@color/colorPrimary"
-        android:fontFamily="@font/ubuntu"
+        android:fontFamily="@font/ubuntu_bold"
         android:padding="10dp"
-        android:text="Enable Dark Mode"
 
+        android:text="Enable Dark Mode"
         android:textAllCaps="false"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
