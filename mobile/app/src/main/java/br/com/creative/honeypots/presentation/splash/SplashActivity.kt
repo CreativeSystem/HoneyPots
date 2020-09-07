@@ -3,17 +3,14 @@ package br.com.creative.honeypots.presentation.splash
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
-import br.com.creative.honeypots.MainActivity
 import br.com.creative.honeypots.R
 import br.com.creative.honeypots.presentation.BaseActivity
 import br.com.creative.honeypots.presentation.signin.SignInActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.*
 
-class SplashActivity :BaseActivity() {
+class SplashActivity : BaseActivity() {
     private val activityScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +22,13 @@ class SplashActivity :BaseActivity() {
         activityScope.launch {
             delay(1500)
             var intent = Intent(this@SplashActivity, SignInActivity::class.java)
-            var options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@SplashActivity, logoImg,"logoTransition")
+            var options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this@SplashActivity,
+                logoImg,
+                "logoTransition"
+            )
 
-            startActivity(intent,options.toBundle())
-//            delay(100)
-//            finish()
+            startActivity(intent, options.toBundle())
         }
 
     }

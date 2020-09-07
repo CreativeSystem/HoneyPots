@@ -10,7 +10,12 @@
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
+
         <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/logo_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/logo_transition</item>
+        <item name="android:windowExitTransition">@android:transition/no_transition</item>
+        <item name="android:windowEnterTransition">@transition/auto</item>
     </style>
 
 </resources>
