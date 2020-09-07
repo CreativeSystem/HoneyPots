@@ -4,8 +4,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="fontFamily">@font/ubuntu</item>
-        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="fontFamily">@font/ubuntu_bold</item>
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
@@ -45,6 +46,13 @@
 
     <style name="FacebookButton" parent="com_facebook_button">
         <item name="android:textSize">14.0sp</item>
+    </style>
+    
+    <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:elevation">4dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="fontFamily">@font/ubuntu_bold</item>
     </style>
 
     <style name="itemListFeed" parent="">

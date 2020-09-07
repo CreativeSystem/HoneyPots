@@ -4,4 +4,7 @@
     <string name="navigation_bar_item_search">Search</string>
     <string name="navigation_bar_item_liked">Liked</string>
     <string name="navigation_bar_item_profile">Profile</string>
+    <string name="profile_title">Profile</string>
+    <string name="liked_title">Liked Recipes</string>
+    <string name="search_title">Search Recipes</string>
 </resources>
