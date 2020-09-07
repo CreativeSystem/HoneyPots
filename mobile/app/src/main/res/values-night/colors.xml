@@ -16,7 +16,8 @@
     <color name="floatingButtonTint">#333333</color>
 
     <color name="backgroundSplash">#121212</color>
-    
+    <color name="backgroundSignIn">#121212</color>
+
 <!--    <color name="lightYellowPrimary">#F8C444</color>-->
 <!--    <color name="lightBlackPrimary">#333333</color>-->
 <!--    <color name="LightWhitePrimary">#F5F5F1</color>-->
