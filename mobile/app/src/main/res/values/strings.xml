@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Honey Pots</string>
+
+    <!-- Example Data Facebook Login -->
+    <string name="facebook_app_id">341458443700507</string>
+    <string name="fb_login_protocol_scheme">fb341458443700507</string>
+
 </resources>

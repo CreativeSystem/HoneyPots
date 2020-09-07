@@ -34,9 +34,13 @@
         app:layout_anchorGravity="start|center"
         android:elevation="4dp"
         android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:clickable="true"
         android:outlineProvider="none"
         app:srcCompat="@drawable/logo"
+        android:transitionName="logoTransition"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         android:contentDescription="honey pots logo on feed"
         android:focusable="true" />
 

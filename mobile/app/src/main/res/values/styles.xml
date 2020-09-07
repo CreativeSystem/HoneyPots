@@ -10,6 +10,12 @@
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/logo_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/logo_transition</item>
+        <item name="android:windowExitTransition">@android:transition/no_transition</item>
+        <item name="android:windowEnterTransition">@transition/auto</item>
     </style>
 
     <style name="AppTheme.Splash" parent="AppTheme">
@@ -17,6 +23,14 @@
         <item name="android:statusBarColor">@color/backgroundSplash</item>
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowBackground">@drawable/splash_drawable</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+    </style>
+
+    <style name="AppTheme.SignIn" parent="AppTheme">
+        <item name="android:statusBarColor">@color/backgroundSignIn</item>
+        <item name="android:windowBackground">@color/backgroundSignIn</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowEnterTransition">@transition/sign_in_transition</item>
     </style>
 
     <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -31,6 +45,10 @@
         <item name="fabSize">mini</item>
     </style>
 
+    <style name="FacebookButton" parent="com_facebook_button">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    
     <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
         <item name="android:elevation">4dp</item>
         <item name="android:background">@color/colorPrimary</item>

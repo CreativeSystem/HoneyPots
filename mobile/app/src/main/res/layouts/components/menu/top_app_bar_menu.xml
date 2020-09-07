@@ -5,12 +5,12 @@
     <item
         android:id="@+id/savory"
         android:title="Savories"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
     <item
         android:id="@+id/sweet"
         android:title="Sweets"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
     <item
         android:id="@+id/drink"
