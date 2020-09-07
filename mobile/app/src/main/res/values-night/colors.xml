@@ -11,8 +11,8 @@
     <color name="botNavItemTint">@color/bottom_navbar_item_tint</color>
     <color name="botNavSelectedItemTint">#F5F5F1</color>
 
-    <color name="floatingButtonBG">#5BCD6F</color>
-    <color name="floatingButtonRipple">#f8c444</color>
+    <color name="floatingButtonBG">#f8c444</color>
+    <color name="floatingButtonRipple">#333333</color>
     <color name="floatingButtonTint">#333333</color>
 
     <color name="backgroundSplash">#121212</color>

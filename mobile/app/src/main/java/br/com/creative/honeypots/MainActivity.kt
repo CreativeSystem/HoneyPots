@@ -25,19 +25,8 @@ class MainActivity : BaseActivity() {
 
         bottomNavigationView.bottomNavigation.setupWithNavController(navController)
 
-
         bottomNavigationView.floatingButton.setOnClickListener {
             Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
-        }
-
-        btn_dark.setOnClickListener {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                btn_dark.text = "Enable Light Mode"
-                return@setOnClickListener;
-            }
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            btn_dark.text = "Enable Dark Mode"
         }
     }
 }
