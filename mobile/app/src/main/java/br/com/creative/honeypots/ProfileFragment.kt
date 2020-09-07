@@ -24,14 +24,12 @@ class ProfileFragment : Fragment() {
 
         profileAppBarView.regularTopAppBar.title = getString(R.string.profile_title)
 
-        btn_dark.setOnClickListener {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                btn_dark.text = "Enable Light Mode"
-                return@setOnClickListener;
+        tempSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                return@setOnCheckedChangeListener
             }
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            btn_dark.text = "Enable Dark Mode"
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
     }
 }

@@ -24,6 +24,7 @@
         <item name="itemTextColor">@color/botNavItemTint</item>
         <item name="labelVisibilityMode">labeled</item>
     </style>
+
     <style name="FloatingButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
         <item name="backgroundTint">@color/floatingButtonBG</item>
         <item name="tint">@color/floatingButtonTint</item>
@@ -36,6 +37,21 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:fontFamily">@font/ubuntu_bold</item>
         <item name="fontFamily">@font/ubuntu_bold</item>
+    </style>
+
+    <style name="ProfileOption" parent="">
+        <item name="android:background">@drawable/profile_option_selector</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ProfileOptionIcon" parent="">
+        <item name="android:tint">@color/text</item>
+    </style>
+
+    <style name="ProfileOptionText" parent="">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="itemListFeed" parent="">

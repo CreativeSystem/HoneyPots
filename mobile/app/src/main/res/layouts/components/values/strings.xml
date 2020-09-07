@@ -7,4 +7,16 @@
     <string name="profile_title">Profile</string>
     <string name="liked_title">Liked Recipes</string>
     <string name="search_title">Search Recipes</string>
+    <string name="creative_profile">Creative Profile</string>
+    <string name="my_recipes_icon">my recipes icon</string>
+    <string name="my_recipes">My Recipes</string>
+    <string name="app_configuration_icon">app configuration icon</string>
+    <string name="app_configuration">App Configuration</string>
+    <string name="account_icon">account icon</string>
+    <string name="account">Account</string>
+    <string name="help_icon">help icon</string>
+    <string name="help">Help</string>
+    <string name="logout">Logout</string>
+    <string name="logout_icon">logout icon</string>
+    <string name="user_avatar">user avatar</string>
 </resources>
