@@ -23,6 +23,12 @@ class ProfileFragment : Fragment() {
 
         profileAppBarView.regularTopAppBar.title = getString(R.string.profile_title)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        tempSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                return@setOnCheckedChangeListener
+            }
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 }

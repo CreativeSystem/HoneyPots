@@ -21,8 +21,8 @@ class SplashActivity : BaseActivity() {
 
         activityScope.launch {
             delay(1500)
-            var intent = Intent(this@SplashActivity, SignInActivity::class.java)
-            var options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+            val intent = Intent(this@SplashActivity, SignInActivity::class.java)
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this@SplashActivity,
                 logoImg,
                 "logoTransition"

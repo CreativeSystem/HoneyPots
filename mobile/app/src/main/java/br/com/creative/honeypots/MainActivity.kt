@@ -3,9 +3,11 @@ package br.com.creative.honeypots
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import br.com.creative.honeypots.presentation.BaseActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_menu.view.*
 
@@ -25,5 +27,13 @@ class MainActivity : BaseActivity() {
         bottomNavigationView.floatingButton.setOnClickListener {
             Toast.makeText(this, "NEW RECIPE", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onBackPressed() {
+        MaterialAlertDialogBuilder(this,R.style.AlertDialog)
+            .setMessage(R.string.confirm_quit)
+            .setPositiveButton(R.string.confirm_quit_yes) { _, _ -> quit() }
+            .setNegativeButton(R.string.confirm_quit_no) { _, _ -> }
+            .show()
     }
 }

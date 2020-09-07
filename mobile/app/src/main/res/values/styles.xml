@@ -18,6 +18,10 @@
         <item name="android:windowEnterTransition">@transition/auto</item>
     </style>
 
+    <style name="AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/dialogText</item>
+    </style>
+
     <style name="AppTheme.Splash" parent="AppTheme">
         <item name="android:navigationBarColor">@color/backgroundSplash</item>
         <item name="android:statusBarColor">@color/backgroundSplash</item>

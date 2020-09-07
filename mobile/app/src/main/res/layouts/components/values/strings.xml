@@ -19,4 +19,7 @@
     <string name="logout">Logout</string>
     <string name="logout_icon">logout icon</string>
     <string name="user_avatar">user avatar</string>
+    <string name="confirm_quit">Do you wish to quit?</string>
+    <string name="confirm_quit_yes">Yes</string>
+    <string name="confirm_quit_no">No</string>
 </resources>
