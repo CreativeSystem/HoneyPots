@@ -5,9 +5,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="fontFamily">@font/ubuntu</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
 
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="AppTheme.Splash" parent="AppTheme">
@@ -15,11 +17,18 @@
         <item name="android:statusBarColor">@color/backgroundSplash</item>
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowBackground">@drawable/splash_drawable</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+
     </style>
 
     <style name="AppTheme.SignIn" parent="AppTheme">
         <item name="android:statusBarColor">@color/backgroundSignIn</item>
+        <item name="android:windowBackground">@color/backgroundSignIn</item>
         <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/logo_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/logo_transition</item>
+        <item name="android:windowEnterTransition">@transition/sign_in_transition</item>
+        <item name="android:windowExitTransition">@transition/sign_in_transition</item>
     </style>
 
     <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -32,6 +41,10 @@
         <item name="tint">@color/floatingButtonTint</item>
         <item name="rippleColor">@color/floatingButtonRipple</item>
         <item name="fabSize">mini</item>
+    </style>
+
+    <style name="FacebookButton" parent="com_facebook_button">
+        <item name="android:textSize">14.0sp</item>
     </style>
 
     <style name="itemListFeed" parent="">

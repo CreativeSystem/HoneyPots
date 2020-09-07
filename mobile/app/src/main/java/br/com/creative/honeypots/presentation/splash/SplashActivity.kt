@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityOptionsCompat
 import br.com.creative.honeypots.MainActivity
 import br.com.creative.honeypots.R
 import br.com.creative.honeypots.presentation.BaseActivity
 import br.com.creative.honeypots.presentation.signin.SignInActivity
+import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.*
 
 class SplashActivity :BaseActivity() {
@@ -21,10 +23,13 @@ class SplashActivity :BaseActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 
         activityScope.launch {
-            delay(2000)
+            delay(1500)
             var intent = Intent(this@SplashActivity, SignInActivity::class.java)
-            startActivity(intent)
-            finish()
+            var options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@SplashActivity, logoImg,"logoTransition")
+
+            startActivity(intent,options.toBundle())
+//            delay(100)
+//            finish()
         }
 
     }
