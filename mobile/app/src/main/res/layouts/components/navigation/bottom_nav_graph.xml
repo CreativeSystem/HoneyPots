@@ -9,8 +9,7 @@
         android:id="@+id/feedFragment"
         android:name="br.com.creative.honeypots.FeedFragment"
         android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" >
-    </fragment>
+        tools:layout="@layout/fragment_feed" />
     <fragment
         android:id="@+id/searchFragment"
         android:name="br.com.creative.honeypots.SearchFragment"

@@ -22,4 +22,15 @@
     <string name="confirm_quit">Do you wish to quit?</string>
     <string name="confirm_quit_yes">Yes</string>
     <string name="confirm_quit_no">No</string>
+    <string name="configuration_title">Configurations</string>
+    <string name="notifications">Notifications</string>
+    <string name="light_dark_mode_icon">light dark mode icon</string>
+    <string name="light_dark">Light/Dark</string>
+    <string name="privacy_policy_icon">privacy policy icon</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="user_agreement_icon">user agreement icon</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="download_user_data_icon">download user data icon</string>
+    <string name="download_user_data">Download User Data</string>
+    <string name="arrow_back">arrow back</string>
 </resources>

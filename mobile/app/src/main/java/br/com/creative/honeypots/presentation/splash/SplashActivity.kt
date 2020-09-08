@@ -1,8 +1,10 @@
 package br.com.creative.honeypots.presentation.splash
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
 import br.com.creative.honeypots.R
 import br.com.creative.honeypots.presentation.BaseActivity
@@ -12,7 +14,6 @@ import kotlinx.coroutines.*
 
 class SplashActivity : BaseActivity() {
     private val activityScope = CoroutineScope(Dispatchers.Main)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
