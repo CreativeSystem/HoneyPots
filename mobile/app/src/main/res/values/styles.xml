@@ -18,6 +18,31 @@
         <item name="android:windowEnterTransition">@transition/auto</item>
     </style>
 
+    <style name="AlertTextInput" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="hintTextColor">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/dialogText</item>
+    </style>
+
+    <style name="AlertDialogDeleteAccount" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Negative</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/alert</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Alert.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/lightGreenPrimary</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="AppTheme.Splash" parent="AppTheme">
         <item name="android:navigationBarColor">@color/backgroundSplash</item>
         <item name="android:statusBarColor">@color/backgroundSplash</item>
@@ -37,4 +62,18 @@
         <item name="android:textSize">14.0sp</item>
     </style>
 
+    <style name="ProfileOption" parent="">
+        <item name="android:background">@drawable/profile_option_selector</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ProfileOptionIcon" parent="">
+        <item name="android:tint">@color/text</item>
+    </style>
+
+    <style name="ProfileOptionText" parent="">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>

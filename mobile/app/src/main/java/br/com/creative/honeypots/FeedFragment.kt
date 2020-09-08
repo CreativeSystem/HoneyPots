@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import br.com.creative.honeypots.presentation.OnSwipeTouchListener
 import kotlinx.android.synthetic.main.feed_app_bar.view.*
 import kotlinx.android.synthetic.main.fragment_feed.*
 
@@ -20,6 +22,14 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val navController = findNavController()
+
+        view.setOnTouchListener(object : OnSwipeTouchListener() {
+            override fun onSwipeLeft() {
+                navController.navigate(R.id.searchFragment)
+            }
+        })
 
         feedAppBarView.feedLogo.setOnClickListener {
             Toast.makeText(context, "teste5", Toast.LENGTH_SHORT).show()

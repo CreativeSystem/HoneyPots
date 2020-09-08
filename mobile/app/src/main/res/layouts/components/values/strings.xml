@@ -7,5 +7,34 @@
     <string name="profile_title">Profile</string>
     <string name="liked_title">Liked Recipes</string>
     <string name="search_title">Search Recipes</string>
-    <string name="input_search_hint">Search ...</string>
+
+    <string name="creative_profile">Creative Profile</string>
+    <string name="my_recipes_icon">my recipes icon</string>
+    <string name="my_recipes">My Recipes</string>
+    <string name="app_configuration_icon">app configuration icon</string>
+    <string name="app_configuration">App Configuration</string>
+    <string name="account_icon">account icon</string>
+    <string name="account">Account</string>
+    <string name="help_icon">help icon</string>
+    <string name="help">Help</string>
+    <string name="logout">Logout</string>
+    <string name="logout_icon">logout icon</string>
+    <string name="user_avatar">user avatar</string>
+    <string name="confirm_quit">Do you wish to quit?</string>
+    <string name="confirm_quit_yes">Yes</string>
+    <string name="confirm_quit_no">No</string>
+    <string name="configuration_title">Configurations</string>
+    <string name="notifications">Notifications</string>
+    <string name="light_dark_mode_icon">light dark mode icon</string>
+    <string name="light_dark">Light/Dark</string>
+    <string name="privacy_policy_icon">privacy policy icon</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="user_agreement_icon">user agreement icon</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="download_user_data_icon">download user data icon</string>
+    <string name="download_user_data">Download User Data</string>
+    <string name="arrow_back">arrow back</string>
+
+    <string name="input_search_hint">Search …</string>
+
 </resources>

@@ -1,11 +1,15 @@
 package br.com.creative.honeypots
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import br.com.creative.honeypots.presentation.ConfigurationActivity
+import br.com.creative.honeypots.presentation.OnSwipeTouchListener
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.regular_app_bar.view.*
 
@@ -23,14 +27,18 @@ class ProfileFragment : Fragment() {
 
         profileAppBarView.regularTopAppBar.title = getString(R.string.profile_title)
 
-        btn_dark.setOnClickListener {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                btn_dark.text = "Enable Light Mode"
-                return@setOnClickListener
+        val navController = findNavController()
+
+        view.setOnTouchListener(object : OnSwipeTouchListener() {
+            override fun onSwipeRight() {
+                navController.navigate(R.id.likedFragment)
             }
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            btn_dark.text = "Enable Dark Mode"
+        })
+
+        appConfiguration.setOnClickListener {
+            val intent = Intent(context, ConfigurationActivity::class.java)
+
+            startActivity(intent)
         }
     }
 }

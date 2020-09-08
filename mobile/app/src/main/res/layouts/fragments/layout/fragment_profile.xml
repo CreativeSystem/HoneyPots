@@ -1,34 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:fillViewport="true">
 
-    <include android:id="@+id/profileAppBarView" layout="@layout/regular_app_bar"/>
-
-    <TextView
-        android:id="@+id/textViewProfile"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Profile" />
-
-    <Button
-        android:id="@+id/btn_dark"
-        android:layout_width="347dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/ubuntu_bold"
-        android:padding="10dp"
+        tools:context=".ProfileFragment">
 
-        android:text="Enable Dark Mode"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <include
+            android:id="@+id/profileAppBarView"
+            layout="@layout/regular_app_bar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/profileAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:contentDescription="@string/user_avatar"
+            android:src="@drawable/creative_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:pointerIcon="horizontal_double_arrow"
+            android:text="@string/creative_profile"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileAvatar" />
+
+
+        <RelativeLayout
+            android:id="@+id/myRecipes"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileName">
+
+            <ImageView
+                android:id="@+id/myRecipesIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/my_recipes_icon"
+                android:src="@drawable/ic_outline_book_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/MyRecipesText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/myRecipesIcon"
+                android:text="@string/my_recipes"
+                app:layout_constraintStart_toEndOf="@+id/myRecipesIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/appConfiguration"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/myRecipes">
+
+            <ImageView
+                android:id="@+id/appConfigurationIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_configuration_icon"
+                android:src="@drawable/ic_outline_settings_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/appConfigurationText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/appConfigurationIcon"
+                android:text="@string/app_configuration"
+                app:layout_constraintStart_toEndOf="@+id/appConfigurationIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/account"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appConfiguration">
+
+            <ImageView
+                android:id="@+id/accountIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/account_icon"
+                android:src="@drawable/ic_outline_person_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/accountText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/accountIcon"
+                android:text="@string/account"
+                app:layout_constraintStart_toEndOf="@+id/accountIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/help"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account">
+
+            <ImageView
+                android:id="@+id/helpIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/help_icon"
+                android:src="@drawable/ic_baseline_help_outline_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/helpText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/helpIcon"
+                android:text="@string/help"
+                app:layout_constraintStart_toEndOf="@+id/helpIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logout"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/help">
+
+            <ImageView
+                android:id="@+id/logoutIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/logout_icon"
+                android:src="@drawable/ic_baseline_power_settings_new_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/logoutText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/logoutIcon"
+                android:text="@string/logout"
+                app:layout_constraintStart_toEndOf="@+id/logoutIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
