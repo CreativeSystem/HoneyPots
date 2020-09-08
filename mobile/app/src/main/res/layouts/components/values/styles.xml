@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemIconTint">@color/botNavItemTint</item>
+        <item name="itemTextColor">@color/botNavItemTint</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="FloatingButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/floatingButtonBG</item>
+        <item name="tint">@color/floatingButtonTint</item>
+        <item name="rippleColor">@color/floatingButtonRipple</item>
+        <item name="fabSize">mini</item>
+    </style>
+
+    <style name="FeedTopAppBar" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:elevation">4dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="titleTextColor">@color/text</item>
+        <item name="fontFamily">@font/ubuntu_bold</item>
+    </style>
+
+    <style name="itemListFeed" parent="">
+        <item name="android:background">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="SearchInput.TextAppearance.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/inputSearchText</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="fontFamily">@font/ubuntu</item>
+        <item name="fontStyle">normal</item>
+    </style>
+
+    <style name="SearchInput.TextInputEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColorHint">@color/inputSearchText</item>
+        <item name="android:textCursorDrawable">@drawable/input_search_cursor</item>
+        <item name="borderWidth">1dp</item>
+    </style>
+
+    <style name="SearchInput.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="startIconDrawable">@drawable/ic_baseline_search_24</item>
+        <item name="startIconTint">@color/inputSearchText</item>
+        <item name="hintEnabled">false</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="textAppearanceSubtitle1">@style/SearchInput.TextAppearance.Subtitle1</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+</resources>
