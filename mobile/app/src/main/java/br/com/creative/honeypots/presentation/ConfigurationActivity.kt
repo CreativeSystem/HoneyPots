@@ -1,5 +1,6 @@
 package br.com.creative.honeypots.presentation
 
+import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,8 @@ import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import br.com.creative.honeypots.R
 import br.com.creative.honeypots.SearchFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_configuration.*
 import kotlinx.android.synthetic.main.regular_app_bar.*
 import kotlinx.android.synthetic.main.regular_app_bar.view.*
@@ -20,6 +23,16 @@ class ConfigurationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuration)
+
+        deleteAccount.setOnClickListener {
+            MaterialAlertDialogBuilder(this, R.style.AlertDialogDeleteAccount)
+                .setTitle(R.string.title_delete_account)
+                .setMessage(R.string.message_delete_account)
+                .setView(R.layout.delete_text_input)
+                .setPositiveButton(R.string.confirm_delete_account) { _, _ -> }
+                .setNegativeButton(R.string.cancel_delete_account) { _, _ -> }
+                .show()
+        }
 
         arrowBack.setOnClickListener {
             onBackPressed()

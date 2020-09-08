@@ -8,6 +8,8 @@
     <color name="text">#F5F5F1</color>
     <color name="textAlt">#333333</color>
 
+    <color name="alert">@color/darkRedPrimary</color>
+
     <color name="dialogText">@color/darkWhitePrimary</color>
 
     <color name="botNavItemTint">@color/bottom_navbar_item_tint</color>
