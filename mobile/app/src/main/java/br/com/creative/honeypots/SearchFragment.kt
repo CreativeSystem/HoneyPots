@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.creative.honeypots.presentation.OnSwipeTouchListener
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.regular_app_bar.view.*
+import kotlinx.android.synthetic.main.search_input.view.*
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -35,5 +37,9 @@ class SearchFragment : Fragment() {
                 navController.navigate(R.id.feedFragment)
             }
         })
+
+        SearchInputView.searchInput?.doOnTextChanged { inputText, _, _, _ ->
+            txtSearch.text = inputText.toString()
+        }
     }
 }

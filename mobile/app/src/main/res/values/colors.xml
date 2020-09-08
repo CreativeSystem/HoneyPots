@@ -37,4 +37,22 @@
     <color name="darkRedPrimary">#C32844</color>
     <color name="darkGreenPrimary">#5BCD6F</color>
     <color name="darkWhitePrimary">#F5F5F1</color>
+
+    <color name="inputSearchBackground">#333333</color>
+    <color name="inputSearchText">#F5F5F1</color>
+<!--    <color name="lightYellowPrimary">#F8C444</color>-->
+<!--    <color name="lightBlackPrimary">#333333</color>-->
+<!--    <color name="LightWhitePrimary">#F5F5F1</color>-->
+<!--    <color name="lightBluePrimary">#169BF3</color>-->
+<!--    <color name="lightRedPrimary">#B80037</color>-->
+<!--    <color name="lightGreenPrimary">#3E8137</color>-->
+
+<!--    <color name="darkBlackPrimary">#121212</color>-->
+<!--    <color name="darkBlackSecondary">#1E1E1E</color>-->
+<!--    <color name="darkBlackTertiary">#242424</color>-->
+<!--    <color name="darkBluePrimary">#00A7B2</color>-->
+<!--    <color name="darkRedPrimary">#C32844</color>-->
+<!--    <color name="darkGreenPrimary">#5BCD6F</color>-->
+<!--    <color name="darkWhitePrimary">#F5F5F1</color>-->
+>>>>>>> 9d14cc25ad2f9169cfbab2f6fa505b71ae754b21
 </resources>

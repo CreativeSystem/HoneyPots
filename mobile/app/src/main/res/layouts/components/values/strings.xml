@@ -7,6 +7,7 @@
     <string name="profile_title">Profile</string>
     <string name="liked_title">Liked Recipes</string>
     <string name="search_title">Search Recipes</string>
+
     <string name="creative_profile">Creative Profile</string>
     <string name="my_recipes_icon">my recipes icon</string>
     <string name="my_recipes">My Recipes</string>
@@ -33,4 +34,7 @@
     <string name="download_user_data_icon">download user data icon</string>
     <string name="download_user_data">Download User Data</string>
     <string name="arrow_back">arrow back</string>
+
+    <string name="input_search_hint">Search …</string>
+
 </resources>

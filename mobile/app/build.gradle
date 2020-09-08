@@ -18,7 +18,12 @@ android {
 
     sourceSets {
         main {
-            res.srcDirs = [file("src/main/res/layouts/").listFiles(), "src/main/res"]
+            res.srcDirs = [
+                "src/main/res/layouts/activities",
+                "src/main/res/layouts/components",
+                "src/main/res/layouts/fragments",
+                "src/main/res"
+            ]
         }
     }
 
@@ -40,8 +45,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta7'
 
     /*Login Social*/
     implementation 'com.facebook.android:facebook-login:[5,6)'
