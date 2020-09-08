@@ -8,6 +8,10 @@
     <color name="text">#F5F5F1</color>
     <color name="textAlt">#333333</color>
 
+    <color name="alert">@color/darkRedPrimary</color>
+
+    <color name="dialogText">@color/darkWhitePrimary</color>
+
     <color name="botNavItemTint">@color/bottom_navbar_item_tint</color>
     <color name="botNavSelectedItemTint">#F5F5F1</color>
 
@@ -17,19 +21,4 @@
 
     <color name="backgroundSplash">#121212</color>
     <color name="backgroundSignIn">#121212</color>
-
-<!--    <color name="lightYellowPrimary">#F8C444</color>-->
-<!--    <color name="lightBlackPrimary">#333333</color>-->
-<!--    <color name="LightWhitePrimary">#F5F5F1</color>-->
-<!--    <color name="lightBluePrimary">#169BF3</color>-->
-<!--    <color name="lightRedPrimary">#B80037</color>-->
-<!--    <color name="lightGreenPrimary">#3E8137</color>-->
-
-<!--    <color name="darkBlackPrimary">#121212</color>-->
-<!--    <color name="darkBlackSecondary">#1E1E1E</color>-->
-<!--    <color name="darkBlackTertiary">#242424</color>-->
-<!--    <color name="darkBluePrimary">#00A7B2</color>-->
-<!--    <color name="darkRedPrimary">#C32844</color>-->
-<!--    <color name="darkGreenPrimary">#5BCD6F</color>-->
-<!--    <color name="darkWhitePrimary">#F5F5F1</color>-->
 </resources>

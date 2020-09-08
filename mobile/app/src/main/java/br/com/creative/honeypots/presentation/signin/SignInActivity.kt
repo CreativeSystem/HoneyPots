@@ -26,9 +26,10 @@ class SignInActivity : BaseActivity() {
 
         initGoogleSignIn()
 
-        facebookContainer.setOnClickListener {
-            var intent = Intent(this@SignInActivity, MainActivity::class.java)
-            var options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+        facebookContainer.setOnClickListener { button ->
+            button.isEnabled = false
+            val intent = Intent(this@SignInActivity, MainActivity::class.java)
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this@SignInActivity,
                 appLogo,
                 "logoTransition"
@@ -37,6 +38,12 @@ class SignInActivity : BaseActivity() {
             startActivity(intent, options.toBundle())
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        facebookContainer.isEnabled = true
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -79,4 +86,5 @@ class SignInActivity : BaseActivity() {
         }
     }
 
+    override fun onBackPressed() {}
 }
