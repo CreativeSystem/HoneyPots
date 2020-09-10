@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        tools:context=".presentation.ConfigurationActivity">
+
+        <include
+            android:id="@+id/configurationAppBarView"
+            layout="@layout/regular_app_bar"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <RelativeLayout
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="96dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/configurationAppBarView">
+
+            <ImageView
+                android:id="@+id/notificationsIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/notifications"
+                android:src="@drawable/ic_baseline_notifications_none_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/notificationsText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/notificationsIcon"
+                android:text="@string/notifications"
+                app:layout_constraintStart_toEndOf="@+id/notificationsIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lightDarkMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notifications">
+
+            <ImageView
+                android:id="@+id/lightDarkModeIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/light_dark_mode_icon"
+                android:src="@drawable/ic_outline_wb_sunny_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/lightDarkModeText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/lightDarkModeIcon"
+                android:text="@string/light_dark"
+                app:layout_constraintStart_toEndOf="@+id/lightDarkModeIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/privacyPolicy"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lightDarkMode">
+
+            <ImageView
+                android:id="@+id/privacyPolicyIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/privacy_policy_icon"
+                android:src="@drawable/ic_outline_library_books_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/privacyPolicyText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/privacyPolicyIcon"
+                android:text="@string/privacy_policy"
+                app:layout_constraintStart_toEndOf="@+id/privacyPolicyIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/userAgreement"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/privacyPolicy">
+
+            <ImageView
+                android:id="@+id/userAgreementIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/user_agreement_icon"
+                android:src="@drawable/ic_outline_library_books_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/userAgreementText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/userAgreementIcon"
+                android:text="@string/user_agreement"
+                app:layout_constraintStart_toEndOf="@+id/userAgreementIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/downloadUserData"
+            style="@style/ProfileOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userAgreement">
+
+            <ImageView
+                android:id="@+id/downloadUserDataIcon"
+                style="@style/ProfileOptionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/download_user_data_icon"
+                android:src="@drawable/ic_outline_cloud_download_24" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/downloadUserDataText"
+                style="@style/ProfileOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_toEndOf="@+id/downloadUserDataIcon"
+                android:text="@string/download_user_data"
+                app:layout_constraintStart_toEndOf="@+id/downloadUserDataIcon"
+                tools:layout_editor_absoluteY="305dp" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/notificationsSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="16dp"
+            android:minWidth="4dp"
+            android:minHeight="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notifications"
+            app:layout_constraintTop_toTopOf="@+id/configurationAppBarView" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/lightDarkModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:minWidth="4dp"
+            android:minHeight="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notifications"
+            app:layout_constraintTop_toBottomOf="@+id/notificationsSwitch" />
+
+        <ImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/arrow_back"
+            android:tint="@color/arrow_back_selector_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_outline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/deleteAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/delete_account"
+            android:textColor="@color/delete_account_selector_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/downloadUserData" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
