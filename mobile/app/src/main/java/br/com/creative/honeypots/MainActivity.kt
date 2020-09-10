@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.creative.honeypots.presentation.BaseActivity
+import br.com.creative.honeypots.recipe.RecipeDetailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_menu.view.*
 
@@ -24,15 +25,23 @@ class MainActivity : BaseActivity() {
 
         val recipes: ArrayList<Recipe> = ArrayList()
 
-        for (i in 1..100) {
-            recipes.add(Recipe("Item #$i", R.drawable.image_12))
+        val l = ArrayList<String>()
+        l.add(0,"Ingredient 1")
+        l.add(1,"Ingredient 2")
+        l.add(2,"Ingredient 3")
+        for (i in 1..20) {
+            recipes.add(Recipe("Item #$i", l, R.drawable.image_12, "Description"))
         }
 
         with(recipeListView) {
             layoutManager =
                 LinearLayoutManager(this@MainActivity, RecyclerView.HORIZONTAL, false)
             setHasFixedSize(true)
-            adapter = RecipeFeedAdapter(recipes)
+            adapter = RecipeFeedAdapter(recipes) { recipe ->
+                val intent = RecipeDetailActivity
+                    .getStartIntent(this@MainActivity, recipe);
+                this@MainActivity.startActivity(intent);
+            };
         }
 
         bottomNavigationView.bottomNavigation.setupWithNavController(navController)
