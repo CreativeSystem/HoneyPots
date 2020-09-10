@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="@+id/txtShare"
             app:layout_constraintStart_toStartOf="@+id/txtShare"
             app:layout_constraintTop_toBottomOf="@+id/divisor"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
+            app:srcCompat="@drawable/ic_share" />
 
             <ImageButton
                 android:id="@+id/btnLike"
