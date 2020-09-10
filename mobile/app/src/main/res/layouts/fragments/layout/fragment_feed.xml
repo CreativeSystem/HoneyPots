@@ -9,6 +9,12 @@
         android:id="@+id/feedAppBarView"
         layout="@layout/feed_app_bar" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipeListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
