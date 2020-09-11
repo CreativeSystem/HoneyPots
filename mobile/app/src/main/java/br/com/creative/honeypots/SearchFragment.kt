@@ -28,7 +28,7 @@ class SearchFragment : Fragment() {
 
         val navController = findNavController()
 
-        view.setOnTouchListener(object : OnSwipeTouchListener() {
+        view.setOnTouchListener(object : OnSwipeTouchListener(view.context) {
             override fun onSwipeLeft() {
                 navController.navigate(R.id.likedFragment)
             }

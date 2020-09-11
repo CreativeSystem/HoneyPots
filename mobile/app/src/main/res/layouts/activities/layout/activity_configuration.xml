@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background"
@@ -20,10 +21,11 @@
 
         <RelativeLayout
             android:id="@+id/notifications"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="96dp"
+            app:layout_constraintEnd_toStartOf="@+id/notificationsSwitch"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/configurationAppBarView">
 
@@ -53,10 +55,11 @@
 
         <RelativeLayout
             android:id="@+id/lightDarkMode"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/lightDarkModeSwitch"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/notifications">
 
@@ -84,133 +87,61 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/privacyPolicy"
-            style="@style/ProfileOption"
+        <Button
+            android:id="@+id/btnPrivacyPolicy"
+            style="@style/TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/privacy_policy"
+            app:icon="@drawable/ic_outline_library_books_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lightDarkMode">
+            app:layout_constraintTop_toBottomOf="@+id/lightDarkMode" />
 
-            <ImageView
-                android:id="@+id/privacyPolicyIcon"
-                style="@style/ProfileOptionIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/privacy_policy_icon"
-                android:src="@drawable/ic_outline_library_books_24" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/privacyPolicyText"
-                style="@style/ProfileOptionText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:layout_toEndOf="@+id/privacyPolicyIcon"
-                android:text="@string/privacy_policy"
-                app:layout_constraintStart_toEndOf="@+id/privacyPolicyIcon"
-                tools:layout_editor_absoluteY="305dp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/userAgreement"
-            style="@style/ProfileOption"
+        <Button
+            android:id="@+id/btnUserAgreement"
+            style="@style/TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/user_agreement"
+            app:icon="@drawable/ic_outline_library_books_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/privacyPolicy">
+            app:layout_constraintTop_toBottomOf="@+id/btnPrivacyPolicy" />
 
-            <ImageView
-                android:id="@+id/userAgreementIcon"
-                style="@style/ProfileOptionIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/user_agreement_icon"
-                android:src="@drawable/ic_outline_library_books_24" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/userAgreementText"
-                style="@style/ProfileOptionText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:layout_toEndOf="@+id/userAgreementIcon"
-                android:text="@string/user_agreement"
-                app:layout_constraintStart_toEndOf="@+id/userAgreementIcon"
-                tools:layout_editor_absoluteY="305dp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/downloadUserData"
-            style="@style/ProfileOption"
+        <Button
+            android:id="@+id/btnDownloadUserData"
+            style="@style/TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/download_user_data"
+            app:icon="@drawable/ic_outline_cloud_download_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userAgreement">
-
-            <ImageView
-                android:id="@+id/downloadUserDataIcon"
-                style="@style/ProfileOptionIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/download_user_data_icon"
-                android:src="@drawable/ic_outline_cloud_download_24" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/downloadUserDataText"
-                style="@style/ProfileOptionText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:layout_toEndOf="@+id/downloadUserDataIcon"
-                android:text="@string/download_user_data"
-                app:layout_constraintStart_toEndOf="@+id/downloadUserDataIcon"
-                tools:layout_editor_absoluteY="305dp" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toBottomOf="@+id/btnUserAgreement" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/notificationsSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="188dp"
             android:layout_marginTop="96dp"
             android:layout_marginEnd="16dp"
             android:minWidth="4dp"
             android:minHeight="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/notifications"
             app:layout_constraintTop_toTopOf="@+id/configurationAppBarView" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/lightDarkModeSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="188dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:minWidth="4dp"
             android:minHeight="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/notifications"
-            app:layout_constraintTop_toBottomOf="@+id/notificationsSwitch" />
+            app:layout_constraintStart_toStartOf="@+id/notificationsSwitch"
+            app:layout_constraintTop_toTopOf="@+id/lightDarkMode" />
 
         <ImageView
             android:id="@+id/arrowBack"
@@ -229,14 +160,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"
             android:focusable="true"
             android:text="@string/delete_account"
             android:textColor="@color/delete_account_selector_color"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/downloadUserData" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDownloadUserData" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

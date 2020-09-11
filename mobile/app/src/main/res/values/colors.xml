@@ -19,6 +19,9 @@
 
     <color name="alert">@color/lightRedPrimary</color>
 
+    <color name="imageCardBackground">#A3A3A3</color>
+    <color name="recipeCardBackground">#efefe6</color>
+
     <color name="backgroundSplash">#F8C444</color>
 
     <color name="backgroundSignIn">#F8C444</color>

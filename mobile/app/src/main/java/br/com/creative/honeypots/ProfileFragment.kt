@@ -29,13 +29,13 @@ class ProfileFragment : Fragment() {
 
         val navController = findNavController()
 
-        view.setOnTouchListener(object : OnSwipeTouchListener() {
+        view.setOnTouchListener(object : OnSwipeTouchListener(view.context) {
             override fun onSwipeRight() {
                 navController.navigate(R.id.likedFragment)
             }
         })
 
-        appConfiguration.setOnClickListener {
+        btnAppConfig.setOnClickListener {
             val intent = Intent(context, ConfigurationActivity::class.java)
 
             startActivity(intent)

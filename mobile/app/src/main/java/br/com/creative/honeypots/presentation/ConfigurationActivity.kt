@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_configuration.*
 import kotlinx.android.synthetic.main.regular_app_bar.*
 import kotlinx.android.synthetic.main.regular_app_bar.view.*
 
-class ConfigurationActivity : AppCompatActivity() {
+class ConfigurationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuration)

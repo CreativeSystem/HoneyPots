@@ -10,6 +10,9 @@
 
     <color name="alert">@color/darkRedPrimary</color>
 
+    <color name="imageCardBackground">@color/darkBlackSecondary</color>
+    <color name="recipeCardBackground">@color/darkBlackTertiary</color>
+
     <color name="dialogText">@color/darkWhitePrimary</color>
 
     <color name="botNavItemTint">@color/bottom_navbar_item_tint</color>
