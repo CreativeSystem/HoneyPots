@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemList"
+    style="@style/itemListFeed"
     android:layout_width="110dp"
     android:layout_height="150dp"
-    style="@style/itemListFeed"
-    android:orientation="vertical"
+    android:layout_margin="5dp"
     android:elevation="10dp"
-    >
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:textAlignment="center">
 
     <ImageView
-        android:id="@+id/item_image"
+        android:id="@+id/itemImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="center"
-        app:srcCompat="@drawable/image_12" />
+        android:layout_height="match_parent"
+        android:scaleType="center" />
 
     <ImageView
-        android:id="@+id/item_gradient"
+        android:id="@+id/itemGradient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/item_gradient"
-        android:layout_alignParentBottom="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/item_gradient" />
+
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/itemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apple Pie"
-        android:layout_alignStart="@id/item_gradient"
-        android:layout_alignTop="@id/item_gradient"
-        android:layout_alignEnd="@id/item_gradient"
-        android:layout_alignBottom="@id/item_gradient"
         android:gravity="center"
-        android:textColor="#fff"/>
-</RelativeLayout>
+        android:text="Apple Pie"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemGradient" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

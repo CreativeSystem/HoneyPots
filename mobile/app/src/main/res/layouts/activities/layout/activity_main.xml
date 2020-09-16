@@ -8,7 +8,6 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragNavHost"
         android:name="androidx.navigation.fragment.NavHostFragment"
