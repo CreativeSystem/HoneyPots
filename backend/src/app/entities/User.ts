@@ -1,22 +1,20 @@
-import bcrypt from 'bcrypt'
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
   OneToMany,
-  BeforeUpdate,
-  BeforeInsert,
-  BaseEntity
+  BaseEntity,
+  PrimaryColumn
 } from 'typeorm'
 
-import Token from './Token'
+import { Recipe, Token, RecipeAction } from '.'
+import { UserConfiguration } from '../@types/User'
 
 @Entity()
 export default class User extends BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn()
   id: string
 
   @CreateDateColumn()
@@ -28,45 +26,30 @@ export default class User extends BaseEntity {
   @DeleteDateColumn()
   deletedAt: Date
 
-  @Column({ length: 80 })
+  @Column({ length: 50 })
   name: string
 
-  @Column({ length: 80 })
+  @Column({ length: 100 })
   email: string
+
+  @Column({ length: 100, nullable: true })
+  facebookId: string
+
+  @Column({ length: 100, nullable: true })
+  googleId: string
+
+  @Column({ length: 255, nullable: true })
+  avatarUrl: string
+
+  @Column({ type: 'jsonb', nullable: true })
+  configuration: UserConfiguration
 
   @OneToMany(() => Token, token => token.user)
   tokens: Token[]
 
-  @Column({ length: 80 })
-  private passwordHash: string
+  @OneToMany(() => Recipe, recipe => recipe.user)
+  recipes: Recipe[]
 
-  private passwordNeedHash = false
-  public set password(password: string) {
-    this.passwordNeedHash = true
-    this.passwordHash = password
-  }
-
-  public get password() {
-    return this.passwordHash
-  }
-
-  public async checkPassword(password: string) {
-    return await bcrypt.compare(password, this.passwordHash)
-  }
-
-  private async hashPassword() {
-    if (this.passwordNeedHash) {
-      this.passwordHash = await bcrypt.hash(this.password, 8)
-    }
-  }
-
-  @BeforeInsert()
-  async beforeInsert() {
-    await this.hashPassword()
-  }
-
-  @BeforeUpdate()
-  async beforeUpdate() {
-    await this.hashPassword()
-  }
+  @OneToMany(() => RecipeAction, recipeAction => recipeAction.user)
+  actions: RecipeAction[]
 }

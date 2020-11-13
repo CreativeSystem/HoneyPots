@@ -10,7 +10,8 @@ export default function <T>(
     response: Response,
     nextFunction: NextFunction
   ) => {
-    const data = request.body as T
+    const data = request.all as T
+
     const validator = new Validator(data, rules, customMessages)
 
     validator.checkAsync(nextFunction, () => {

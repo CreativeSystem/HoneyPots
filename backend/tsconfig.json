@@ -26,7 +26,11 @@
       "@config/*": ["./src/config/*"],
       "@app/*": ["./src/app/*"],
       "@helpers/*": ["./src/helpers/*"]
-    }
+    },
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types",
+    ]  
   },
   "exclude": ["node_modules", "packages/**/__tests__"]
 }

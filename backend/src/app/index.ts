@@ -1,16 +1,19 @@
 import cors from 'cors'
 import express, { Express } from 'express'
 import helmet from 'helmet'
-import { injectable } from 'inversify'
+import { injectable, multiInject } from 'inversify'
 import morgan from 'morgan'
+
+import { Controller } from './controllers/@types'
+import MergeQueryAndBodyMiddleware from './middlewares/MergeQueryAndBodyMiddleware'
 
 @injectable()
 export default class AppController {
   express: Express
-  constructor() {
+  constructor(@multiInject('Controller') controllers: Controller[]) {
     this.express = express()
     this.middlewares()
-    this.routes()
+    this.routes(controllers)
   }
 
   middlewares() {
@@ -18,10 +21,19 @@ export default class AppController {
     this.express.use(cors())
     this.express.use(express.json())
     this.express.use(morgan('dev'))
+    this.express.use(MergeQueryAndBodyMiddleware())
   }
 
-  routes() {
-    this.express.get('/', (_req, res) => res.json({ hello: 'World' }))
+  routes(controllers: Controller[]) {
+    controllers.forEach(controller => controller.applyRoute(this.express))
+    this.express.get('/routes', (_req, res) =>
+      res.json(
+        controllers.map(controller => ({
+          method: controller.method.toString(),
+          route: controller.route
+        }))
+      )
+    )
   }
 
   listen(port: number) {

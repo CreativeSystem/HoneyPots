@@ -14,17 +14,19 @@ export enum TokenType {
   EmailVerification = 'EMAIL_VERIFICATION',
   LoggedUser = 'LOGGED_USER'
 }
-
 @Entity()
 export default class Token extends BaseEntity {
-  @PrimaryColumn({ update: false })
-  token: string
+  @PrimaryColumn({ update: false, length: 100 })
+  key: string
 
-  @Column({ update: false, enum: TokenType })
+  @Column({ update: false, enum: TokenType, length: 30 })
   type: TokenType
 
   @CreateDateColumn()
   createdAt: Date
+
+  @Column()
+  expiresAt?: Date
 
   @ManyToOne(() => User, user => user.tokens, {
     onDelete: 'CASCADE',
