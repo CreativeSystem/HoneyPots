@@ -28,7 +28,7 @@ export class TokenMigration1605196792297 implements MigrationInterface {
           {
             name: 'key',
             type: 'varchar',
-            length: '100',
+            length: '255',
             isPrimary: true
           },
           {

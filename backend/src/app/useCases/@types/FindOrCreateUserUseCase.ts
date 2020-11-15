@@ -1,10 +1,10 @@
 import { User } from '~/app/entities'
-import { FacebookUser } from '~/app/providers/@types'
+import { FacebookUser, GoogleUser } from '~/app/providers/@types'
 
 import { UseCase } from '.'
 
-export interface FindOrCreteUserParameter {
-  user: FacebookUser
+export interface FindOrCreateUserParameter {
+  user: FacebookUser | GoogleUser
 }
 
-export type FindOrCreteUserUseCase = UseCase<FindOrCreteUserParameter, User>
+export type FindOrCreateUserUseCase = UseCase<FindOrCreateUserParameter, User>

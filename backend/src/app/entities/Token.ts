@@ -16,7 +16,7 @@ export enum TokenType {
 }
 @Entity()
 export default class Token extends BaseEntity {
-  @PrimaryColumn({ update: false, length: 100 })
+  @PrimaryColumn({ update: false, length: 255 })
   key: string
 
   @Column({ update: false, enum: TokenType, length: 30 })
@@ -26,7 +26,7 @@ export default class Token extends BaseEntity {
   createdAt: Date
 
   @Column()
-  expiresAt?: Date
+  expiresAt: Date
 
   @ManyToOne(() => User, user => user.tokens, {
     onDelete: 'CASCADE',

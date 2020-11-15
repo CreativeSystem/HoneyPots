@@ -3,6 +3,7 @@ export interface FacebookProvider {
 }
 
 export interface FacebookUser {
+  type: 'facebook'
   id: string
   name: string
   email: string

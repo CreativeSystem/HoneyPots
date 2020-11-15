@@ -1,4 +1,6 @@
 export * from './UseCase'
 export * from './GetUserFacebookUseCase'
-export * from './LoginSocialUserUseCase'
+export * from './LoginSocialUseCase'
 export * from './FindOrCreateUserUseCase'
+export * from './GetUserGoogleUseCase'
+export * from './CreateTokenUseCase'
