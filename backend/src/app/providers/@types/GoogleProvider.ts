@@ -3,7 +3,6 @@ export interface GoogleProvider {
 }
 
 export interface GoogleUser {
-  type: 'google'
   id: string
   name: string
   email: string

@@ -1,4 +1,11 @@
-import { Express, Request, RequestHandler, Response } from 'express'
+import AuthenticationMiddleware from '~/app/middlewares/AuthenticationMiddleware'
+import {
+  Express,
+  NextFunction,
+  Request,
+  RequestHandler,
+  Response
+} from 'express'
 import { PathParams } from 'express-serve-static-core'
 import { injectable } from 'inversify'
 
@@ -13,13 +20,23 @@ export enum HttpMethods {
 export abstract class Controller {
   readonly method: HttpMethods
   readonly route: PathParams
+  authentication = false
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   middlewares(): RequestHandler[] | void {}
-  abstract handle(req: Request, res: Response): any
+  abstract async handle(req: Request, res: Response): Promise<any>
+
+  handleInternal(req: Request, res: Response, next: NextFunction) {
+    this.handle(req, res).catch(e => next(e))
+  }
 
   handles() {
     const middlewares = this.middlewares() || []
-    return [...middlewares, this.handle.bind(this)]
+
+    return [
+      ...(this.authentication ? [AuthenticationMiddleware] : []),
+      ...middlewares,
+      this.handleInternal.bind(this)
+    ]
   }
 
   applyRoute(express: Express) {

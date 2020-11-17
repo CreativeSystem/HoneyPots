@@ -21,6 +21,7 @@ export default class implements FacebookProvider {
         fields: fields.join(',')
       }
     })
+
     return data
   }
 }

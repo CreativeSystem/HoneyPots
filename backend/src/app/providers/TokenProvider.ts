@@ -1,8 +1,9 @@
+import { strict } from 'assert'
 import fs from 'fs'
 import { inject, injectable } from 'inversify'
 import jwt from 'jsonwebtoken'
 
-import { TokenPayload, TokenProvider } from './@types'
+import { TokenPayload, TokenProvider, TokenVerify } from './@types'
 @injectable()
 export default class implements TokenProvider {
   private privateKey: Buffer
@@ -29,5 +30,12 @@ export default class implements TokenProvider {
     return (jwt.verify(token, this.publicKey, {
       algorithms: ['RS256']
     }) as unknown) as T
+  }
+
+  refresh(token: string): string {
+    const payload = this.verify<TokenPayload & TokenVerify>(token)
+    delete payload.iat
+    delete payload.exp
+    return this.sign(payload)
   }
 }

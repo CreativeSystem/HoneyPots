@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify'
 
-import { CreateTokenUseCase, FindOrCreateUserUseCase } from '.'
+import { CreateOrRefreshTokenUseCase, FindOrCreateUserUseCase } from '.'
 import {
   GetUserFacebookUseCase,
   GetUserGoogleUseCase,
@@ -20,8 +20,8 @@ export default class implements LoginSocialUseCase {
   @inject('FindOrCreateUserUseCase')
   private findOrCreateUserUseCase: FindOrCreateUserUseCase
 
-  @inject('CreateTokenUseCase')
-  private createTokenUseCase: CreateTokenUseCase
+  @inject('CreateOrRefreshTokenUseCase')
+  private createTokenUseCase: CreateOrRefreshTokenUseCase
 
   async execute({ social, accessToken, tokenId }: LoginSocialParameter) {
     const socialUser = await (social === SocialType.FACEBOOK
@@ -29,7 +29,8 @@ export default class implements LoginSocialUseCase {
       : this.getUserGoogleUseCase.execute({ accessToken, tokenId }))
 
     const user = await this.findOrCreateUserUseCase.execute({
-      user: socialUser
+      user: socialUser,
+      social
     })
 
     return await this.createTokenUseCase.execute({ user })

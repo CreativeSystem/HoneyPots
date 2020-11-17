@@ -2,8 +2,7 @@ export interface FacebookProvider {
   getMe(accessToken: string): Promise<FacebookUser>
 }
 
-export interface FacebookUser {
-  type: 'facebook'
+export class FacebookUser {
   id: string
   name: string
   email: string

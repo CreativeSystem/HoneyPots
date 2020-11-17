@@ -8,8 +8,11 @@ export interface AccessToken {
   expiresAt: Date
 }
 
-export interface CreateTokenParameter {
+export interface CreateOrRefreshTokenParameter {
   user: User
 }
 
-export type CreateTokenUseCase = UseCase<CreateTokenParameter, AccessToken>
+export type CreateOrRefreshTokenUseCase = UseCase<
+  CreateOrRefreshTokenParameter,
+  AccessToken
+>

@@ -2,50 +2,54 @@ import { injectable } from 'inversify'
 import { v4 as uuid } from 'uuid'
 
 import { User } from '../entities'
-import { FindOrCreateUserParameter, FindOrCreateUserUseCase } from './@types'
+import { FacebookPicture } from '../providers/@types'
+import {
+  FindOrCreateUserParameter,
+  FindOrCreateUserUseCase,
+  SocialType
+} from './@types'
 
 @injectable()
 export default class implements FindOrCreateUserUseCase {
-  async execute({ user: searchUser }: FindOrCreateUserParameter) {
-    let user: User | undefined
+  async execute({ user: socialUser, social }: FindOrCreateUserParameter) {
+    const isFacebook = social === SocialType.FACEBOOK
+    const isGoogle = social === SocialType.GOOGLE
+    let user = await User.findOne(
+      isFacebook
+        ? {
+            where: [
+              {
+                facebookId: socialUser.id
+              },
+              {
+                email: socialUser.email
+              }
+            ]
+          }
+        : {
+            where: [
+              {
+                googleId: socialUser.id
+              },
+              {
+                email: socialUser.email
+              }
+            ]
+          }
+    )
 
-    if (searchUser.type === 'facebook') {
-      user = await User.findOne({
-        where: [
-          {
-            facebookId: searchUser.id
-          },
-          {
-            email: searchUser.email
-          }
-        ]
-      })
-    } else {
-      user = await User.findOne({
-        where: [
-          {
-            googleId: searchUser.id
-          },
-          {
-            email: searchUser.email
-          }
-        ]
-      })
-    }
     if (!user) {
       user = new User()
       user.id = uuid()
     }
 
-    user.name = searchUser.name
-    user.googleId = searchUser.type === 'google' ? searchUser.id : user.googleId
-    user.facebookId =
-      searchUser.type === 'facebook' ? searchUser.id : user.facebookId
-    user.email = searchUser.email
-    user.avatarUrl =
-      searchUser.type === 'google'
-        ? searchUser.picture
-        : searchUser.picture.data.url
+    user.name = socialUser.name
+    user.googleId = isGoogle ? socialUser.id : user.googleId
+    user.facebookId = isFacebook ? socialUser.id : user.facebookId
+    user.email = socialUser.email
+    user.avatarUrl = isGoogle
+      ? (socialUser.picture as string)
+      : (socialUser.picture as FacebookPicture).data.url
 
     return await user.save()
   }

@@ -13,7 +13,14 @@ export default class AppController {
   constructor(@multiInject('Controller') controllers: Controller[]) {
     this.express = express()
     this.middlewares()
+    // TODO melhorar Exception Handler
     this.routes(controllers)
+    this.express.use((err, req, res, next) => {
+      console.error(err.stack)
+      res.json({
+        erro: err
+      })
+    })
   }
 
   middlewares() {
