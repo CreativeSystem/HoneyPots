@@ -1,2 +1,5 @@
 export { default as User } from './User'
 export { default as Token } from './Token'
+export { default as Image } from './Image'
+export { default as Recipe } from './Recipe'
+export { default as RecipeAction } from './RecipeAction'

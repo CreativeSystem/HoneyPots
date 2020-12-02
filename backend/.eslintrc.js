@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier', 'eslint-plugin-import-helpers'],
   rules: {
-    'max-len': ['error', { code: 80 }],
+    'max-len': ['error', { code: 100 }],
     'prettier/prettier': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'import-helpers/order-imports': [
@@ -41,7 +41,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     camelcase: 'off',
-    'no-useless-call': 'off'
+    'no-useless-call': 'off',
+    indent: 'off'
   },
   settings: {
     'import/resolver': {
