@@ -1,5 +1,4 @@
 import inversifyContainer from '~/config/inversify'
-import bindDependencies from '~/helpers/bindDependencies'
 import { Request, Response, NextFunction } from 'express'
 import Validator, { Rules } from 'validatorjs'
 

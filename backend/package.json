@@ -5,6 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "lint": "eslint --fix src",
+    "prestart": "docker-compose up -d",
     "start": "tsnd -r tsconfig-paths/register --ignore node_modules --transpile-only --no-notify --respawn --inspect -- src/server.ts",
     "pretest": "NODE_ENV=test yarn typeorm migration:run",
     "test": "NODE_ENV=test jest --passWithNoTests",
