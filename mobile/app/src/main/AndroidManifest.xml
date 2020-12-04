@@ -56,6 +56,7 @@
         </activity>
 
         <activity android:name=".recipe.RecipeDetailActivity" />
+        <activity android:name=".recipe.RecipeCreateActivity" />
 
     </application>
 

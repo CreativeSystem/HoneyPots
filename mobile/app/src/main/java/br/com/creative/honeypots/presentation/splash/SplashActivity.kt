@@ -9,6 +9,7 @@ import androidx.core.app.ActivityOptionsCompat
 import br.com.creative.honeypots.R
 import br.com.creative.honeypots.presentation.BaseActivity
 import br.com.creative.honeypots.presentation.signin.SignInActivity
+import br.com.creative.honeypots.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.*
 
@@ -22,7 +23,7 @@ class SplashActivity : BaseActivity() {
 
         activityScope.launch {
             delay(1500)
-            val intent = Intent(this@SplashActivity, SignInActivity::class.java)
+            val intent = Intent(this@SplashActivity, MainActivity::class.java)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this@SplashActivity,
                 logoImg,
