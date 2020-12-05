@@ -1,7 +1,8 @@
+import downloadImageFromUrl from '~/helpers/downloadImageFromUrl'
 import { injectable } from 'inversify'
 import { v4 as uuid } from 'uuid'
 
-import { User } from '../entities'
+import { User, Image } from '../entities'
 import { FacebookPicture } from '../providers/@types'
 import {
   FindOrCreateUserParameter,
@@ -42,6 +43,23 @@ export default class implements FindOrCreateUserUseCase {
       user = new User()
       user.id = uuid()
     }
+    const avatarId = uuid()
+    const avatarName = `${avatarId}.png`
+    const avatarUrl = isGoogle
+      ? (socialUser.picture as string)
+      : (socialUser.picture as FacebookPicture).data.url
+
+    await downloadImageFromUrl(
+      avatarUrl,
+      `${process.env.IMAGE_DIR}/${avatarName}`
+    )
+    const image = Image.create({
+      id: avatarId,
+      name: avatarName,
+      originalName: avatarName
+    })
+
+    await image.save()
 
     user.name = socialUser.name
     user.googleId = isGoogle ? socialUser.id : user.googleId
