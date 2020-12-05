@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/background"
-    tools:context=".MainActivity">
+    tools:context=".presentation.recipe.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragNavHost"

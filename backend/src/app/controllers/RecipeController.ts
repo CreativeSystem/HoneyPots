@@ -32,6 +32,7 @@ export class RecipeController extends GetController {
       [search || '']
     )) as { id: string }[]
 
+    if (!recipesId.length) return res.json([])
     const recipes = await Recipe.find({
       relations: ['user'],
       where: {

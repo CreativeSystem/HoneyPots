@@ -1,19 +1,21 @@
-package br.com.creative.honeypots
+package br.com.creative.honeypots.presentation.recipe
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import br.com.creative.honeypots.BuildConfig
+import br.com.creative.honeypots.R
+import br.com.creative.honeypots.data.model.Recipe
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper
 import kotlinx.android.synthetic.main.layout_item_list.view.*
 
-class RecipeFeedAdapter(
-    private val items: ArrayList<Recipe>,
+class RecipeAdapter(
+    private val items: List<Recipe>,
     private val onItemClickListener: ((recipe: Recipe)-> Unit)
-): RecyclerView.Adapter<RecipeFeedAdapter.RecipeFeedViewHolder>() {
+): RecyclerView.Adapter<RecipeAdapter.RecipeFeedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, view: Int): RecipeFeedViewHolder {
         val itemView =
@@ -27,27 +29,28 @@ class RecipeFeedAdapter(
 
     override fun getItemCount() = items.size
 
-    inner class RecipeFeedViewHolder(
+    class RecipeFeedViewHolder(
         itemView: View,
         private val onItemClickListener: ((recipe: Recipe)-> Unit)
     ) : RecyclerView.ViewHolder(itemView) {
         private val name: TextView = itemView.itemName;
-        private val image: ImageView = itemView.itemImage;
-
-        init {
-            itemView.setOnClickListener {view: View ->
-                val position: Int = adapterPosition;
-                Toast.makeText(itemView.context, "Recipe #${position + 1}", Toast.LENGTH_SHORT).show();
-            }
-        }
+        private val imageView: ImageView = itemView.itemImage;
 
         fun bindView(recipe: Recipe) {
-            name.text = recipe.name;
-            image.setImageResource(recipe.image);
+            name.text = recipe.content.name;
+
+            val images = recipe.content.images
+            if(images.isNotEmpty()){
+                UrlImageViewHelper.setUrlDrawable(imageView,getImageUrl(images[0]))
+            }
 
             itemView.setOnClickListener {
                 onItemClickListener.invoke(recipe);
             }
+        }
+
+        private fun getImageUrl(image:String): String {
+            return "${BuildConfig.BACKEND_URL}image/$image"
         }
     }
 }

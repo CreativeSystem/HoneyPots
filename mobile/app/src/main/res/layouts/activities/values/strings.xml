@@ -17,6 +17,10 @@
     <string name="title_delete_account">Do you really wish to delete you account?</string>
     <string name="cancel_delete_account">Cancel</string>
     <string name="account_name">Account Name</string>
+    <string name="error_login">Couldn\'t login! Please try again later.</string>
+    <string name="feed_my_recipes">My Recipes</string>
+    <string name="feed_liked_recipes">Liked Recipes</string>
+    <string name="feed_visualized_recipes">Visualized Recipes</string>
     <string-array name="termsandprivacyclicks">
         <item>@string/sign_in_use_conditions</item>
         <item>@string/sign_in_privacy_policy</item>

@@ -6,7 +6,6 @@ export enum SocialType {
 }
 
 export interface LoginSocialParameter {
-  tokenId: string
   accessToken: string
   social: SocialType
 }

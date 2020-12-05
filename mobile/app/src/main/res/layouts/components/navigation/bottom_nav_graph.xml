@@ -7,23 +7,23 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="br.com.creative.honeypots.FeedFragment"
+        android:name="br.com.creative.honeypots.presentation.recipe.feed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="br.com.creative.honeypots.SearchFragment"
+        android:name="br.com.creative.honeypots.presentation.recipe.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/likedFragment"
-        android:name="br.com.creative.honeypots.LikedFragment"
+        android:name="br.com.creative.honeypots.presentation.recipe.like.LikedFragment"
         android:label="fragment_liked"
         tools:layout="@layout/fragment_liked"
         />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="br.com.creative.honeypots.ProfileFragment"
+        android:name="br.com.creative.honeypots.presentation.recipe.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile"
         />

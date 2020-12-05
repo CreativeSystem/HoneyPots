@@ -1,22 +1,12 @@
 package br.com.creative.honeypots.presentation
 
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.Navigation
-import androidx.navigation.Navigator
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.findNavController
 import br.com.creative.honeypots.R
-import br.com.creative.honeypots.SearchFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_configuration.*
-import kotlinx.android.synthetic.main.regular_app_bar.*
 import kotlinx.android.synthetic.main.regular_app_bar.view.*
 
 class ConfigurationActivity : AppCompatActivity() {

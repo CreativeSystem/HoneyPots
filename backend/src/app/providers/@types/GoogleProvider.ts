@@ -1,5 +1,10 @@
 export interface GoogleProvider {
-  getMe(accessToken: string, tokenId: string): Promise<GoogleUser>
+  getMe(accessToken: string): Promise<GoogleUser>
+}
+
+export interface GoogleToken {
+  id_token: string
+  access_token: string
 }
 
 export interface GoogleUser {
