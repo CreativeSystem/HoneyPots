@@ -17,7 +17,7 @@ export default class AppController {
     this.routes(controllers)
     this.express.use((err, req, res, next) => {
       console.error(err.stack)
-      res.json({
+      res.status(400).json({
         erro: err
       })
     })
@@ -26,7 +26,12 @@ export default class AppController {
   middlewares() {
     this.express.use(helmet())
     this.express.use(cors())
-    this.express.use(express.json())
+
+    this.express.use(
+      express.json({
+        limit: '50mb'
+      })
+    )
     this.express.use(morgan('dev'))
     this.express.use(MergeQueryAndBodyMiddleware())
   }
