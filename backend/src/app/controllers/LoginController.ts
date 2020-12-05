@@ -17,11 +17,10 @@ export class LoginController extends PostController {
   private loginSocialUseCase: LoginSocialUseCase
 
   async handle(req: Request, res: Response) {
-    const { accessToken, tokenId, social } = req.all as LoginRequest
+    const { accessToken, social } = req.all as LoginRequest
 
     const jwtToken = await this.loginSocialUseCase.execute({
       accessToken,
-      tokenId,
       social
     })
 

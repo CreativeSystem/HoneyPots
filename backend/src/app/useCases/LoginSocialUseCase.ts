@@ -23,10 +23,10 @@ export default class implements LoginSocialUseCase {
   @inject('CreateOrRefreshTokenUseCase')
   private createTokenUseCase: CreateOrRefreshTokenUseCase
 
-  async execute({ social, accessToken, tokenId }: LoginSocialParameter) {
+  async execute({ social, accessToken }: LoginSocialParameter) {
     const socialUser = await (social === SocialType.FACEBOOK
       ? this.getUserFacebookUseCase.execute({ accessToken })
-      : this.getUserGoogleUseCase.execute({ accessToken, tokenId }))
+      : this.getUserGoogleUseCase.execute({ accessToken }))
 
     const user = await this.findOrCreateUserUseCase.execute({
       user: socialUser,

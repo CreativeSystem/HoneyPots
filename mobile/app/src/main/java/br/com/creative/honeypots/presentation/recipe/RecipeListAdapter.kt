@@ -1,4 +1,4 @@
-package br.com.creative.honeypots.recipe
+package br.com.creative.honeypots.presentation.recipe
 
 import android.annotation.SuppressLint
 import android.content.Context

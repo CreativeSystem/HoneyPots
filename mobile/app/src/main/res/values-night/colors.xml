@@ -21,4 +21,5 @@
 
     <color name="backgroundSplash">#121212</color>
     <color name="backgroundSignIn">#121212</color>
+    <color name="itemTextColor">#333</color>
 </resources>

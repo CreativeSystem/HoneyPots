@@ -8,7 +8,7 @@ export default class implements GetUserGoogleUseCase {
   @inject('GoogleProvider')
   private googleProvider: GoogleProvider
 
-  async execute({ accessToken, tokenId }: GetUserGoogleParameter) {
-    return await this.googleProvider.getMe(accessToken, tokenId)
+  async execute({ accessToken }: GetUserGoogleParameter) {
+    return await this.googleProvider.getMe(accessToken)
   }
 }

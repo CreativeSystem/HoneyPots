@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">Honey Pots</string>
-
+    
     <!-- Example Data Facebook Login -->
     <string name="facebook_app_id">761085418003871</string>
     <string name="fb_login_protocol_scheme">fb761085418003871</string>
     <string-array name="facebook_permissions">
         <item>email</item>
+        <item>public_profile</item>
     </string-array>
 
     <string name="google_client_id">903552920801-prs381qhlokf9un53om1kq1it6b142er.apps.googleusercontent.com</string>
     <string name="google_client_secret">jak21fbzg9ZxH-ru2at4Rra0</string>
+    <string name="sp_token_key">token_key</string>
 </resources>
